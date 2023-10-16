@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move(_input.Direction);
+        Move(_input.MovementDirection);
     }
 
     private void Move(Vector2 direction)
