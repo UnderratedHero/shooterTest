@@ -660,6 +660,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1942639792423009844, guid: f3fe5b3ba3262b747986748d1221dbbf, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942639792423009844, guid: f3fe5b3ba3262b747986748d1221dbbf, type: 3}
+      propertyPath: m_Color.g
+      value: 0.43867922
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942639792423009844, guid: f3fe5b3ba3262b747986748d1221dbbf, type: 3}
+      propertyPath: m_Color.r
+      value: 0.44525346
+      objectReference: {fileID: 0}
     - target: {fileID: 5160436990937623020, guid: f3fe5b3ba3262b747986748d1221dbbf, type: 3}
       propertyPath: m_Name
       value: Ground
