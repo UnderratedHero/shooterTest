@@ -170,10 +170,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 392415544859567554}
+  - component: {fileID: 8534755490475409887}
   - component: {fileID: 2621559799827057874}
   - component: {fileID: 5505270960321272736}
   - component: {fileID: 9210948784977969629}
   - component: {fileID: 4836395280402057718}
+  - component: {fileID: 2853042548517382769}
   - component: {fileID: 2439908284056009310}
   - component: {fileID: 2439908284056009309}
   m_Layer: 0
@@ -200,6 +202,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8534755490475409887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629867246059848995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f250b4c66cf0e4388eef18442333f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _config: {fileID: 4836395280402057718}
+  _deathSentry: {fileID: 2853042548517382769}
 --- !u!114 &2621559799827057874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,11 +272,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <MaxHp>k__BackingField: 5
+  <MinHp>k__BackingField: 0
   <WalkSpeed>k__BackingField: 10
   <RightFlipAngle>k__BackingField: 0
   <LeftFlipAngle>k__BackingField: 180
   <UpFlipAngle>k__BackingField: 90
   <DownFlipAngle>k__BackingField: -90
+--- !u!114 &2853042548517382769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629867246059848995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2aa70f94e05fdd4b9fb78705d0a0dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &2439908284056009310
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -93,10 +93,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4809804390536063925}
-  - component: {fileID: 533788268}
-  - component: {fileID: 7575443036811241170}
+  - component: {fileID: 5879826043635874638}
   - component: {fileID: 2871658195634431362}
   - component: {fileID: 593942931502167037}
+  - component: {fileID: 533788268}
+  - component: {fileID: 7575443036811241170}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -120,6 +121,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5879826043635874638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7933032278908153382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82efb6365e151244785abbf5eeed6a55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 64
+  _config: {fileID: 593942931502167037}
+--- !u!114 &2871658195634431362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7933032278908153382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67389a819d7ee2418ce24006aca88d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _config: {fileID: 593942931502167037}
+--- !u!114 &593942931502167037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7933032278908153382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6271dc1487c31ae47a28505dace93b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <BulletLifeTime>k__BackingField: 0.7
+  <Damage>k__BackingField: 1
 --- !u!61 &533788268
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -167,29 +211,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2871658195634431362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7933032278908153382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67389a819d7ee2418ce24006aca88d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _config: {fileID: 593942931502167037}
---- !u!114 &593942931502167037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7933032278908153382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6271dc1487c31ae47a28505dace93b42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <BulletLifeTime>k__BackingField: 0.7
