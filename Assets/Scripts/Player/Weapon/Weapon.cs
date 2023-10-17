@@ -5,13 +5,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private PlayerInput _input;
     [SerializeField] private BulletSentry _sentry;
     [SerializeField] private WeaponConfig _config;
-    private Vector2 _playerLastDirection;
-
-    public void Shoot()
-    {
-       var currentBullet = _sentry.CreateBullet();
-       currentBullet.AddForce(_config.ShootSpeed * _playerLastDirection, ForceMode2D.Impulse);
-    }
+    private Vector2 _playerLastDirection = Vector2.right;
 
     private void Update()
     {
@@ -19,5 +13,11 @@ public class Weapon : MonoBehaviour
         {
             _playerLastDirection = _input.ShootDirection;
         }
+    }
+    
+    public void Shoot()
+    {
+        var currentBullet = _sentry.CreateBullet();
+        currentBullet.AddForce(_config.ShootSpeed * _playerLastDirection, ForceMode2D.Impulse);
     }
 }
