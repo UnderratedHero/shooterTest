@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : NetworkBehaviour
 {
     [SerializeField] private PlayerInput _input;
     [SerializeField] private Rigidbody2D _rigidBody;
@@ -10,6 +9,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(!isLocalPlayer)
+        {
+            return;
+        }
         Move(_input.MovementDirection);
     }
 
