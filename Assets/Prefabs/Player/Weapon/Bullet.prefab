@@ -133,9 +133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82efb6365e151244785abbf5eeed6a55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _layer:
-    serializedVersion: 2
-    m_Bits: 64
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   _config: {fileID: 593942931502167037}
 --- !u!114 &2871658195634431362
 MonoBehaviour:
@@ -149,6 +149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67389a819d7ee2418ce24006aca88d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   _config: {fileID: 593942931502167037}
 --- !u!114 &593942931502167037
 MonoBehaviour:
@@ -162,6 +165,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6271dc1487c31ae47a28505dace93b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   <BulletLifeTime>k__BackingField: 0.7
   <Damage>k__BackingField: 1
 --- !u!61 &533788268

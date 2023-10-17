@@ -1,7 +1,6 @@
 using UnityEngine;
-using Mirror;
 
-public class PlayerMovement : NetworkBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private PlayerInput _input;
     [SerializeField] private Rigidbody2D _rigidBody;
@@ -9,10 +8,6 @@ public class PlayerMovement : NetworkBehaviour
 
     private void FixedUpdate()
     {
-        if(!isLocalPlayer)
-        {
-            return;
-        }
         Move(_input.MovementDirection);
     }
 
