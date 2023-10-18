@@ -1,9 +1,9 @@
 using UnityEngine;
-
-public class Weapon : MonoBehaviour
+using Unity.Netcode;
+public class Weapon : NetworkBehaviour
 {
     [SerializeField] private PlayerInput _input;
-    [SerializeField] private BulletSentry _sentry;
+    [SerializeField] private BulletSentry _bulletSentry;
     [SerializeField] private WeaponConfig _config;
     private Vector2 _playerLastDirection = Vector2.right;
 
@@ -14,10 +14,13 @@ public class Weapon : MonoBehaviour
             _playerLastDirection = _input.ShootDirection;
         }
     }
-    
+
     public void Shoot()
     {
-        var currentBullet = _sentry.CreateBullet();
-        currentBullet.AddForce(_config.ShootSpeed * _playerLastDirection, ForceMode2D.Impulse);
+        if(!IsOwner)
+        {
+            return;
+        }
+        _bulletSentry.CreateBullet().AddForce(_config.ShootSpeed * _playerLastDirection, ForceMode2D.Impulse);
     }
 }

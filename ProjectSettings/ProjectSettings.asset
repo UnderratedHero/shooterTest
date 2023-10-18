@@ -769,11 +769,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 
+  cloudProjectId: e2fc4e04-9e55-4364-a3ae-13510131a913
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: shooterTest
+  organizationId: channelsuharik
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

@@ -1,13 +1,23 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerFlip : MonoBehaviour
+public class PlayerFlip : NetworkBehaviour
 {
     [SerializeField] private PlayerInput _input;
     [SerializeField] private PlayerConfig _config;
 
     private void Update()
     {
-        if(_input.ShootDirection.x > 0 && _input.ShootDirection.y < 0.5 && _input.ShootDirection.y > -0.5)
+        if(!IsOwner)
+        {
+            return;
+        }
+        DirectionCheck();  
+    }
+
+    private void DirectionCheck()
+    {
+        if (_input.ShootDirection.x > 0 && _input.ShootDirection.y < 0.5 && _input.ShootDirection.y > -0.5)
         {
             Flip(_config.RightFlipAngle);
         }

@@ -1,6 +1,6 @@
 using UnityEngine;
-
-public class PlayerMovement : MonoBehaviour
+using Unity.Netcode;
+public class PlayerMovement : NetworkBehaviour
 {
     [SerializeField] private PlayerInput _input;
     [SerializeField] private Rigidbody2D _rigidBody;
@@ -8,6 +8,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(!IsOwner)
+        {
+            return;
+        }
         Move(_input.MovementDirection);
     }
 
