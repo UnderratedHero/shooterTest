@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _config: {fileID: 593942931502167037}
+  _networkObject: {fileID: -7780949642571062691}
 --- !u!114 &593942931502167037
 MonoBehaviour:
   m_ObjectHideFlags: 0

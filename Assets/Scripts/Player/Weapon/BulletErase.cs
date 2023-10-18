@@ -4,10 +4,11 @@ using Unity.Netcode;
 public class BulletErase : NetworkBehaviour
 {
     [SerializeField] private BulletConfig _config;
+    [SerializeField] private NetworkObject _networkObject;
 
     private void Start()
     {
-        DestroyBulletServerRpc(gameObject.GetComponent<NetworkObject>());
+        DestroyBulletServerRpc(_networkObject);
     }
 
     [ServerRpc(RequireOwnership = false)]

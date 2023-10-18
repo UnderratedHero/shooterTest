@@ -3,9 +3,11 @@ using UnityEngine;
 
 public class DeathEffect : MonoBehaviour
 {
+    [SerializeField] private NetworkObject _networkObject;
+
     public void Die()
     {
-       DieServerRpc(gameObject.GetComponent<NetworkObject>());
+       DieServerRpc(_networkObject);
     }
 
     [ServerRpc(RequireOwnership = false)]
