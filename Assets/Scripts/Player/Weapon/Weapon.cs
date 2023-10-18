@@ -1,23 +1,24 @@
 using UnityEngine;
-
-public class Weapon : MonoBehaviour
+using Unity.Netcode;
+public class Weapon : NetworkBehaviour
 {
     [SerializeField] private PlayerInput _input;
-    [SerializeField] private BulletSentry _sentry;
-    [SerializeField] private WeaponConfig _config;
-    private Vector2 _playerLastDirection = Vector2.right;
+    [SerializeField] private GameObject _bullet;
+    [SerializeField] private Transform _spawnPosition;
 
-    private void Update()
-    {
-        if(_input.ShootDirection != Vector2.zero)
-        {
-            _playerLastDirection = _input.ShootDirection;
-        }
-    }
-    
     public void Shoot()
     {
-        var currentBullet = _sentry.CreateBullet();
-        currentBullet.AddForce(_config.ShootSpeed * _playerLastDirection, ForceMode2D.Impulse);
+        if(!IsOwner)
+        {
+            return;
+        }
+        SpawnBulletServerRpc(_spawnPosition.position, _spawnPosition.rotation);
+    }
+
+    [ServerRpc]
+    private void SpawnBulletServerRpc(Vector2 position, Quaternion rotation)
+    {
+        var bullet = Instantiate(_bullet, position, rotation);
+        bullet.GetComponent<NetworkObject>().Spawn(true);
     }
 }

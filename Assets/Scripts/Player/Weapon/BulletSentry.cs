@@ -1,14 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class BulletSentry : MonoBehaviour
+public class BulletSentry : NetworkBehaviour
 {
-    [SerializeField] private GameObject _bullet;
-    [SerializeField] private Transform _spawnPoint;
+    [SerializeField] private BulletConfig _config;
+    [SerializeField] private Rigidbody2D _rigidBody;
 
-    public Rigidbody2D CreateBullet()
+    public override void OnNetworkSpawn()
     {
-        return Instantiate(_bullet, _spawnPoint.position, Quaternion.identity).GetComponent<Rigidbody2D>();
-    }
+        base.OnNetworkSpawn();
+        _rigidBody.AddForce(transform.right * _config.BulletSpeed, ForceMode2D.Impulse);
+    }   
 }

@@ -1,8 +1,8 @@
 public interface IHealth
 {
-    int Current { get; }
+    float Current { get; }
 
-    void Increase(int value);
-    void Decrease(int value);
+    void Increase(float value);
+    void Decrease(float value);
     void Reload();
 }
