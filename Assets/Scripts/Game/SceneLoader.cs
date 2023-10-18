@@ -2,7 +2,6 @@ using Unity.Netcode;
 using UnityEngine.SceneManagement;
 public static class SceneLoader 
 {
-
     public enum Scene
     {
         Game,
@@ -17,8 +16,8 @@ public static class SceneLoader
         NetworkManager.Singleton.SceneManager.LoadScene(targetScene.ToString(), LoadSceneMode.Single);
     }
 
-    public static void LoaderCallback()
+    public static string GetScene()
     {
-        SceneManager.LoadScene(targetScene.ToString());
+        return SceneManager.GetActiveScene().name;
     }
 }
