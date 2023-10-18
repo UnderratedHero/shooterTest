@@ -1,19 +1,19 @@
 using UnityEngine;
+using Unity.Netcode;
 
-public class DamageEffect : MonoBehaviour
+public class DamageEffect : NetworkBehaviour
 {
-    [SerializeField] private BulletConfig _config;
+    [SerializeField] private WeaponConfig _config;
+    [SerializeField] private PlayerHealth _health;
+    [SerializeField] private string _tag;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.TryGetComponent<DeathEffect>(out _))
-        {
-            DealDamage(collision);
-        }
-    }
 
-    private void DealDamage(Collision2D collision)
-    {
-        collision.gameObject.GetComponent<PlayerHealth>().Decrease(_config.Damage);
+        if (!collision.gameObject.CompareTag(_tag))
+        {
+            return;
+        }
+        _health.Decrease(_config.Damage);
     }
 }

@@ -3,20 +3,12 @@ using UnityEngine;
 
 public class BulletSentry : NetworkBehaviour
 {
-    [SerializeField] private GameObject _bullet;
-    [SerializeField] private Transform _spawnPoint;
-    private Rigidbody2D _currentBullet;
+    [SerializeField] private BulletConfig _config;
+    [SerializeField] private Rigidbody2D _rigidBody;
 
-    public Rigidbody2D CreateBullet()
+    public override void OnNetworkSpawn()
     {
-        _currentBullet = Instantiate(_bullet, _spawnPoint.position, Quaternion.identity).GetComponent<Rigidbody2D>() ;
-        CreateBulletServerRpc();
-        return _currentBullet;
-    }
-
-    [ServerRpc]
-    public void CreateBulletServerRpc()
-    {
-        _currentBullet.GetComponent<NetworkObject>().Spawn();
-    }
+        base.OnNetworkSpawn();
+        _rigidBody.AddForce(transform.right * _config.BulletSpeed, ForceMode2D.Impulse);
+    }   
 }

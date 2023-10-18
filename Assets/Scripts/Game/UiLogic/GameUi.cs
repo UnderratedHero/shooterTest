@@ -5,7 +5,7 @@ public class GameUi : MonoBehaviour
 {
     [SerializeField] private Button _exitButton;
 
-    private void Awake()
+    private void Start()
     {
         _exitButton.onClick.AddListener(() => Application.Quit());
     }

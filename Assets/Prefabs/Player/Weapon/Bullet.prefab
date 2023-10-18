@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4809804390536063925}
-  - component: {fileID: 5879826043635874638}
+  - component: {fileID: 4455527383332112617}
   - component: {fileID: 2871658195634431362}
   - component: {fileID: 593942931502167037}
   - component: {fileID: 533788268}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: -7832984393462892932}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,7 +124,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5879826043635874638
+--- !u!114 &4455527383332112617
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,10 +133,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7933032278908153382}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82efb6365e151244785abbf5eeed6a55, type: 3}
+  m_Script: {fileID: 11500000, guid: f6574ad72ea79a84cb76b9dc6c1af4dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _config: {fileID: 593942931502167037}
+  _rigidBody: {fileID: 7575443036811241170}
 --- !u!114 &2871658195634431362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <BulletLifeTime>k__BackingField: 0.7
-  <Damage>k__BackingField: 1
+  <BulletSpeed>k__BackingField: 10
 --- !u!61 &533788268
 BoxCollider2D:
   m_ObjectHideFlags: 0

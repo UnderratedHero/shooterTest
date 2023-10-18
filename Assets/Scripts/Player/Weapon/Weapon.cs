@@ -3,17 +3,8 @@ using Unity.Netcode;
 public class Weapon : NetworkBehaviour
 {
     [SerializeField] private PlayerInput _input;
-    [SerializeField] private BulletSentry _bulletSentry;
-    [SerializeField] private WeaponConfig _config;
-    private Vector2 _playerLastDirection = Vector2.right;
-
-    private void Update()
-    {
-        if(_input.ShootDirection != Vector2.zero)
-        {
-            _playerLastDirection = _input.ShootDirection;
-        }
-    }
+    [SerializeField] private GameObject _bullet;
+    [SerializeField] private Transform _spawnPosition;
 
     public void Shoot()
     {
@@ -21,6 +12,13 @@ public class Weapon : NetworkBehaviour
         {
             return;
         }
-        _bulletSentry.CreateBullet().AddForce(_config.ShootSpeed * _playerLastDirection, ForceMode2D.Impulse);
+        SpawnBulletServerRpc(_spawnPosition.position, _spawnPosition.rotation);
+    }
+
+    [ServerRpc]
+    private void SpawnBulletServerRpc(Vector2 position, Quaternion rotation)
+    {
+        var bullet = Instantiate(_bullet, position, rotation);
+        bullet.GetComponent<NetworkObject>().Spawn(true);
     }
 }

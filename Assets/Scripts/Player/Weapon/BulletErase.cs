@@ -18,7 +18,6 @@ public class BulletErase : NetworkBehaviour
         {
             return;
         }
-
         Destroy(networkBullet.gameObject, _config.BulletLifeTime);
     }
 }
